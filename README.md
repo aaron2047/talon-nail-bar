@@ -7,7 +7,22 @@ A custom-coded site (no template, no site builder) for Talon Nail Bar,
 - `index.html` — page structure and content
 - `styles.css` — all styling
 - `script.js` — mobile menu toggle (small, no dependencies)
-- `assets/` — empty folder, ready for real photos once you have them
+- `assets/` — logo, hero art, ready for real photos once you have them
+- `generate_hero_art.py` — regenerates `assets/hero-art.svg` if you ever want
+  a different variation of the hero linework. Change the `rng = np.random.default_rng(23)`
+  seed number to get a different composition, then rerun with `python3 generate_hero_art.py`.
+
+## About the hero graphic
+The hero's visual is an original SVG — a botanical linework piece extending
+the swirl motif from the real logo, not a stock photo or AI-generated image.
+This was a deliberate choice: a generic stock/AI photo of a hand would raise
+the same "is this even real" problem we've been solving for everywhere else
+on this site, and AI image generators are especially unreliable at rendering
+hands and nails correctly — exactly the one detail nail salon visitors look
+at closest. The linework bleeds off the right edge of the hero for scale and
+impact — this depends on the two-column grid layout, which this project's
+own preview tooling can't render (see note below), so check this section
+specifically in a real browser once deployed.
 
 ## Before showing this to the owner
 1. **Gallery** (`#gallery` in index.html) — currently color swatches standing
