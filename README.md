@@ -49,6 +49,14 @@ Technical notes:
   version that faded the whole photo down lost impact; this version
   keeps the photo itself at full clarity and only softens the edges.
 
+## Files (services photos)
+- `assets/service-dip-powder.jpg`, `assets/service-gel-manicure.jpg`,
+  `assets/service-nail-art.jpg` — close-up crops pulled from the same hero
+  photo (509 S 4th St shoot), used as the small icons in the Services list.
+  Same reasoning as the hero image: real, licensed photography, used as
+  illustrative detail rather than a "this is our work" claim — that claim
+  is still reserved for the Gallery section once real studio photos exist.
+
 ## Before showing this to the owner
 1. **Gallery** (`#gallery` in index.html) — currently color swatches standing
    in for real photos. Swap in actual nail-art photos once you have them —

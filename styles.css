@@ -126,7 +126,7 @@ a:focus-visible, button:focus-visible {
   line-height: 0;
 }
 .wordmark img {
-  height: 44px;
+  height: 50px;
   width: auto;
   display: block;
 }
@@ -137,7 +137,7 @@ a:focus-visible, button:focus-visible {
 .site-nav a {
   color: var(--bone);
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
   margin-right: 32px;
 }
 .site-nav a:last-child {
@@ -174,7 +174,7 @@ a:focus-visible, button:focus-visible {
 .hero {
   background: var(--ink);
   color: var(--bone);
-  padding: 88px 0 96px;
+  padding: 132px 0 104px;
 }
 .hero-grid {
   display: grid;
@@ -275,16 +275,15 @@ a:focus-visible, button:focus-visible {
   padding: 28px 0;
   border-bottom: 1px solid #E4DDD1;
 }
-.service-swatch {
-  width: 44px;
-  height: 44px;
-  border-radius: 2px;
+.service-photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 3px;
   flex-shrink: 0;
   margin-top: 4px;
+  object-fit: cover;
+  display: block;
 }
-.service-swatch.s2 { background: var(--swatch-2); }
-.service-swatch.s4 { background: var(--swatch-4); }
-.service-swatch.s5 { background: var(--swatch-5); }
 .services-note {
   font-size: 14px;
   color: var(--grey);
@@ -420,6 +419,8 @@ a:focus-visible, button:focus-visible {
   }
   .nav-cta { border: none; }
   .nav-toggle { display: flex; }
+  .wordmark img { height: 40px; }
+  .hero { padding: 96px 0 64px; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .service-list li { gap: 16px; }
 }
