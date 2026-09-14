@@ -172,45 +172,28 @@ a:focus-visible, button:focus-visible {
    Hero
    ============================================================ */
 .hero {
-  position: relative;
-  overflow: hidden;
   background: var(--ink);
   color: var(--bone);
-  padding: 110px 0 120px;
+  padding: 88px 0 96px;
 }
-.hero-mark-bg {
-  position: absolute;
-  top: 50%;
-  right: -12%;
-  transform: translateY(-50%);
-  width: 900px;
-  max-width: 85vw;
-  color: var(--bone);
-  opacity: 0.10;
-  pointer-events: none;
-  z-index: 0;
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
 }
-.brand-mark-svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.hero-inner {
+.hero-art-wrap {
   position: relative;
-  z-index: 1;
+  overflow: visible;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
-.hero-copy {
-  max-width: 640px;
-}
-/* Soft scrim behind the copy so the mark never fights with text legibility,
-   even if the composition shifts at different viewport widths. */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(100deg, var(--ink) 0%, var(--ink) 40%, transparent 75%);
-  z-index: 0;
-  pointer-events: none;
+.hero-art-img {
+  width: 145%;
+  max-width: none;
+  position: relative;
+  left: -8%;
 }
 .eyebrow {
   color: var(--bronze);
@@ -405,8 +388,7 @@ a:focus-visible, button:focus-visible {
    Responsive
    ============================================================ */
 @media (max-width: 860px) {
-  .about-grid, .footer-grid { grid-template-columns: 1fr; }
-  .hero-mark-bg { opacity: 0.07; width: 700px; }
+  .hero-grid, .about-grid, .footer-grid { grid-template-columns: 1fr; }
   .testimonial-grid { grid-template-columns: 1fr; gap: 32px; }
   .pull-quote { border-left: none; border-top: 2px solid var(--bronze); padding-left: 0; padding-top: 20px; }
 }
