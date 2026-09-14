@@ -8,45 +8,46 @@ A custom-coded site (no template, no site builder) for Talon Nail Bar,
 - `styles.css` — all styling
 - `script.js` — mobile menu toggle (small, no dependencies)
 - `assets/logo.png` — the real logo, used in the header, footer, and favicon
-- `assets/hero-photo.jpg` — the hero's faded background image (see note
-  below), resized/compressed from the original upload for page-load speed
+- `assets/hero-photo-crop.png` — the hero's image: a real photo, cropped
+  and resized from the original upload, with a soft elliptical fade baked
+  directly into the PNG's alpha channel (see note below) so it blends into
+  the background instead of showing a hard rectangular edge. Sits in the
+  right column of the two-column hero.
 - `assets/talon-logo-mark.svg` — a genuine vector trace of the real logo's
   linework and wordmark. Not currently used on the page, but kept here
   since it's a clean, scalable asset worth having around — e.g. for print
   materials or a future full-bleed treatment.
 - `assets/hero-art.svg` — the earlier painted-nail botanical line art.
-  Not currently used in the hero (swapped for the photo below), but kept
-  here in case it's useful elsewhere, e.g. a smaller accent in the About
-  or Book section.
+  Not currently used in the hero (swapped for the photo), but kept here
+  in case it's useful elsewhere, e.g. a smaller accent in the About or
+  Book section.
 - `generate_hero_art.py` — regenerates `assets/hero-art.svg` if you want
   to revisit that direction. Two separate random streams control it: `rng`
   (branch geometry) and `paint_rng` (nail color/accent choices).
 
 ## About the hero image
-The hero background is a real photo (Unsplash-licensed, free for this kind
-of commercial use, no rights issue) — chosen deliberately as a heavily
-faded, blended backdrop rather than a claim about "our work." That's an
-important distinction: a Gallery section showing "the work" needs to be
-real photos of Talon's actual clients, and stock there would be
-misleading — but a moody, faded hero backdrop is understood as atmosphere,
-not a specific claim, the same way countless small business sites use
-licensed photography as mood-setting background art. Don't reuse this
-same reasoning to justify stock photos in the Gallery section — that's a
-different context with a different expectation.
+The hero image is a real photo (Unsplash-licensed, free for this kind of
+commercial use, no rights issue) — used deliberately as a blended visual
+element, not a claim about "our work." That's an important distinction:
+a Gallery section showing "the work" needs to be real photos of Talon's
+actual clients, and stock there would be misleading — but a photo used
+this way, softly blended into the design, reads as visual atmosphere, not
+a specific claim, the same way countless small business sites use
+licensed photography this way. Don't reuse this same reasoning to justify
+stock photos in the Gallery section — that's a different context with a
+different expectation.
 
 Technical notes:
-- Cropped/positioned via `object-position: center 45%` to keep the actual
-  manicure detail in frame — worth re-checking this value if the photo is
-  ever swapped for a different one, since the right crop depends entirely
-  on where the subject sits in that specific image.
-- Faded via a combination of reduced opacity, a `saturate`/`brightness`
-  filter (keeps it moody rather than a bright inserted photo), and a
-  gradient scrim that's fully solid behind the copy and eases toward the
-  photo further right.
-- One CSS gotcha worth remembering for future edits: this section uses
-  explicit `top/right/bottom/left: 0` rather than the shorter `inset: 0`
-  — the shorthand isn't supported everywhere, and using it here silently
-  broke the full-bleed background layer.
+- The soft edge is baked directly into the image's alpha channel (an
+  elliptical fade, fully opaque through the center, feathering to fully
+  transparent at the edges) rather than done with a CSS mask or filter.
+  This was a deliberate choice for reliability — it renders correctly
+  everywhere images render, with no dependency on a specific browser
+  feature. If you ever swap in a different photo, you'll need to
+  regenerate this fade rather than just dropping in a plain crop.
+- Kept clear and vividly colored on purpose — an earlier full-bleed
+  version that faded the whole photo down lost impact; this version
+  keeps the photo itself at full clarity and only softens the edges.
 
 ## Before showing this to the owner
 1. **Gallery** (`#gallery` in index.html) — currently color swatches standing
