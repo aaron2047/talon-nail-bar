@@ -8,38 +8,45 @@ A custom-coded site (no template, no site builder) for Talon Nail Bar,
 - `styles.css` — all styling
 - `script.js` — mobile menu toggle (small, no dependencies)
 - `assets/logo.png` — the real logo, used in the header, footer, and favicon
+- `assets/hero-photo.jpg` — the hero's faded background image (see note
+  below), resized/compressed from the original upload for page-load speed
 - `assets/talon-logo-mark.svg` — a genuine vector trace of the real logo's
-  linework and wordmark (see note below). Not currently used on the page,
-  but kept here since it's a clean, scalable asset worth having around —
-  e.g. for print materials or a future full-bleed treatment.
-- `assets/hero-art.svg` — the hero's visual: original botanical linework
-  extending the logo's swirl motif, with small painted-nail shapes (in the
-  site's own lacquer colors, with occasional French-tip/dot/moon accents)
-  standing in for leaves. Sits in the right column of the two-column hero.
-- `generate_hero_art.py` — regenerates `assets/hero-art.svg`. Two separate
-  random streams control this: `rng` (the vine/branch geometry — keep this
-  seed fixed unless you want a different composition shape) and `paint_rng`
-  (which nails get which color/accent detail — change this seed for a
-  different color arrangement on the same branch shape). Rerun with
-  `python3 generate_hero_art.py` after any edit.
+  linework and wordmark. Not currently used on the page, but kept here
+  since it's a clean, scalable asset worth having around — e.g. for print
+  materials or a future full-bleed treatment.
+- `assets/hero-art.svg` — the earlier painted-nail botanical line art.
+  Not currently used in the hero (swapped for the photo below), but kept
+  here in case it's useful elsewhere, e.g. a smaller accent in the About
+  or Book section.
+- `generate_hero_art.py` — regenerates `assets/hero-art.svg` if you want
+  to revisit that direction. Two separate random streams control it: `rng`
+  (branch geometry) and `paint_rng` (nail color/accent choices).
 
-## About the hero graphic
-The hero's visual is original artwork, not a stock photo or AI-generated
-image — a deliberate choice: a generic photo would raise the same "is this
-even real" problem we've been solving for everywhere else on this site,
-and AI image generators are especially unreliable at hands and nails,
-exactly what a nail salon's own customers look at closest. It started as
-plain botanical line art; the small "leaves" were reshaped into painted
-nail silhouettes (colored with the site's own lacquer palette, with a few
-carrying a small French-tip line, accent dot, or moon-manicure detail) so
-it reads unmistakably as nail art rather than generic decoration.
+## About the hero image
+The hero background is a real photo (Unsplash-licensed, free for this kind
+of commercial use, no rights issue) — chosen deliberately as a heavily
+faded, blended backdrop rather than a claim about "our work." That's an
+important distinction: a Gallery section showing "the work" needs to be
+real photos of Talon's actual clients, and stock there would be
+misleading — but a moody, faded hero backdrop is understood as atmosphere,
+not a specific claim, the same way countless small business sites use
+licensed photography as mood-setting background art. Don't reuse this
+same reasoning to justify stock photos in the Gallery section — that's a
+different context with a different expectation.
 
-One separate technical note worth keeping in mind: the "herologo.svg" file
-you get from Inkscape by just pasting in a screenshot isn't actually
-vector — it's a raster image wrapped in SVG markup, so it doesn't scale up
-cleanly on its own. `talon-logo-mark.svg` is a proper vectorization of it
-(traced with potrace), so it scales to any size without pixelating, if you
-ever need a large, crisp version of the logo itself.
+Technical notes:
+- Cropped/positioned via `object-position: center 45%` to keep the actual
+  manicure detail in frame — worth re-checking this value if the photo is
+  ever swapped for a different one, since the right crop depends entirely
+  on where the subject sits in that specific image.
+- Faded via a combination of reduced opacity, a `saturate`/`brightness`
+  filter (keeps it moody rather than a bright inserted photo), and a
+  gradient scrim that's fully solid behind the copy and eases toward the
+  photo further right.
+- One CSS gotcha worth remembering for future edits: this section uses
+  explicit `top/right/bottom/left: 0` rather than the shorter `inset: 0`
+  — the shorthand isn't supported everywhere, and using it here silently
+  broke the full-bleed background layer.
 
 ## Before showing this to the owner
 1. **Gallery** (`#gallery` in index.html) — currently color swatches standing
