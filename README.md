@@ -7,22 +7,33 @@ A custom-coded site (no template, no site builder) for Talon Nail Bar,
 - `index.html` — page structure and content
 - `styles.css` — all styling
 - `script.js` — mobile menu toggle (small, no dependencies)
-- `assets/` — logo, hero art, ready for real photos once you have them
-- `generate_hero_art.py` — regenerates `assets/hero-art.svg` if you ever want
-  a different variation of the hero linework. Change the `rng = np.random.default_rng(23)`
-  seed number to get a different composition, then rerun with `python3 generate_hero_art.py`.
+- `assets/logo.png` — the real logo, used in the header favicon and footer
+- `assets/talon-logo-mark.svg` — a genuine vector trace of the real logo's
+  linework and wordmark (see note below), used as the large faded hero
+  backdrop, embedded directly inline in `index.html`
+- `assets/hero-art.svg` — an earlier original line-art concept, no longer
+  used in the hero but kept here in case it's useful elsewhere (e.g. as a
+  smaller accent in the About or Book section)
+- `generate_hero_art.py` — regenerates `assets/hero-art.svg` if you ever
+  want a different variation. Change the `rng = np.random.default_rng(23)`
+  seed number for a different composition, then rerun with
+  `python3 generate_hero_art.py`.
 
 ## About the hero graphic
-The hero's visual is an original SVG — a botanical linework piece extending
-the swirl motif from the real logo, not a stock photo or AI-generated image.
-This was a deliberate choice: a generic stock/AI photo of a hand would raise
-the same "is this even real" problem we've been solving for everywhere else
-on this site, and AI image generators are especially unreliable at rendering
-hands and nails correctly — exactly the one detail nail salon visitors look
-at closest. The linework bleeds off the right edge of the hero for scale and
-impact — this depends on the two-column grid layout, which this project's
-own preview tooling can't render (see note below), so check this section
-specifically in a real browser once deployed.
+The hero's backdrop is the real logo, not a stock photo or AI-generated
+image — same reasoning as before: a generic photo would raise the same
+"is this even real" problem we've been solving for everywhere else, and
+AI image generators are especially unreliable at hands and nails, exactly
+what a nail salon's own customers look at closest.
+
+One technical note worth knowing: the "herologo.svg" file you get from
+Inkscape by just pasting in a screenshot isn't actually vector — it's a
+raster image wrapped in SVG markup, so it doesn't scale up cleanly on its
+own. `talon-logo-mark.svg` is a proper vectorization of it (traced with
+potrace), so it scales to any size without pixelating. If you ever get a
+true original vector file from wherever the logo was first designed,
+that'd be worth swapping in as the source of truth — but this traced
+version is clean and holds up well at the sizes used here.
 
 ## Before showing this to the owner
 1. **Gallery** (`#gallery` in index.html) — currently color swatches standing
