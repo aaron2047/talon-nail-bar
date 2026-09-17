@@ -8,34 +8,43 @@ A custom-coded site (no template, no site builder) for Talon Nail Bar,
 - `styles.css` — all styling
 - `script.js` — mobile menu toggle (small, no dependencies)
 - `assets/logo.png` — the real logo, used in the header, footer, and favicon
-- `assets/hero-photo-crop.png` — the hero's image: a real photo, cropped
-  and resized from the original upload, with a soft elliptical fade baked
-  directly into the PNG's alpha channel (see note below) so it blends into
-  the background instead of showing a hard rectangular edge. Sits in the
-  right column of the two-column hero.
+- `assets/hero-photo-real.png` — the hero's image: a real photo of actual
+  Talon client work (not stock), with the same soft elliptical fade baked
+  into the alpha channel (see note below) so it blends into the background
+  instead of showing a hard rectangular edge. Sits in the right column of
+  the two-column hero.
+- `assets/hero-photo-crop.png` — the earlier stock (Unsplash-licensed)
+  photo originally used in this spot. No longer used now that a real photo
+  exists, but kept here in case it's ever useful as a placeholder again.
 - `assets/talon-logo-mark.svg` — a genuine vector trace of the real logo's
   linework and wordmark. Not currently used on the page, but kept here
   since it's a clean, scalable asset worth having around — e.g. for print
   materials or a future full-bleed treatment.
 - `assets/hero-art.svg` — the earlier painted-nail botanical line art.
-  Not currently used in the hero (swapped for the photo), but kept here
-  in case it's useful elsewhere, e.g. a smaller accent in the About or
-  Book section.
+  Not currently used in the hero, but kept here in case it's useful
+  elsewhere, e.g. a smaller accent in the About or Book section.
 - `generate_hero_art.py` — regenerates `assets/hero-art.svg` if you want
   to revisit that direction. Two separate random streams control it: `rng`
   (branch geometry) and `paint_rng` (nail color/accent choices).
 
 ## About the hero image
-The hero image is a real photo (Unsplash-licensed, free for this kind of
-commercial use, no rights issue) — used deliberately as a blended visual
-element, not a claim about "our work." That's an important distinction:
-a Gallery section showing "the work" needs to be real photos of Talon's
-actual clients, and stock there would be misleading — but a photo used
-this way, softly blended into the design, reads as visual atmosphere, not
-a specific claim, the same way countless small business sites use
-licensed photography this way. Don't reuse this same reasoning to justify
-stock photos in the Gallery section — that's a different context with a
-different expectation.
+The hero now uses a real photo of actual Talon client work, not stock —
+a meaningful upgrade, since it means the "atmosphere vs. claim" distinction
+that mattered for the earlier stock photo doesn't even apply here anymore.
+This same photo (or others like it) would also work well in the Gallery
+section, which has been sitting with placeholder color swatches this whole
+time waiting for exactly this kind of real material.
+
+That said, the general principle is still worth keeping in mind for
+anything added later: a Gallery section showing "the work" needs to be
+real photos of Talon's actual clients — stock there would be misleading,
+even though stock is fine elsewhere (hero backdrop, service icons) when
+used as atmosphere rather than a specific claim.
+
+One thing still worth knowing: the three **service icon** photos
+(`service-dip-powder.jpg` etc.) are still cropped from the *old* stock
+photo, not this new real one — worth revisiting those with real detail
+shots once more real photos come in.
 
 Technical notes:
 - The soft edge is baked directly into the image's alpha channel (an
@@ -51,11 +60,10 @@ Technical notes:
 
 ## Files (services photos)
 - `assets/service-dip-powder.jpg`, `assets/service-gel-manicure.jpg`,
-  `assets/service-nail-art.jpg` — close-up crops pulled from the same hero
-  photo (509 S 4th St shoot), used as the small icons in the Services list.
-  Same reasoning as the hero image: real, licensed photography, used as
-  illustrative detail rather than a "this is our work" claim — that claim
-  is still reserved for the Gallery section once real studio photos exist.
+  `assets/service-nail-art.jpg` — close-up crops from the original stock
+  hero photo, used as the small icons in the Services list. Worth
+  replacing with crops from real photos (like the new hero image) when
+  there's time — see the note above.
 
 ## Before showing this to the owner
 1. **Gallery** (`#gallery` in index.html) — currently color swatches standing
