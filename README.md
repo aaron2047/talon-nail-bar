@@ -28,6 +28,10 @@ A custom-coded site (no template, no site builder) for Talon Nail Bar,
 - `generate_hero_art.py` — regenerates `assets/hero-art.svg` if you want
   to revisit that direction. Two separate random streams control it: `rng`
   (branch geometry) and `paint_rng` (nail color/accent choices).
+- `assets/gallery-shimmer.jpg`, `assets/gallery-chrome.jpg` — the two real
+  Gallery photos currently on the page (gold/black glitter ombre set, deep
+  red chrome set). Clean square crops, no feathering, same "keep it real"
+  treatment as the hero photo.
 
 ## About the hero image
 The hero uses a real photo of actual Talon client work, not stock — full
@@ -43,15 +47,22 @@ tighter portrait shape — that would clip the pinky nails on one or both
 hands. It's used at full frame, which is why it sits a bit wide in the
 right column rather than filling it edge-to-edge.
 
-This same photo (or others like it) would also work well in the Gallery
-section, which has been sitting with placeholder color swatches this whole
-time waiting for exactly this kind of real material.
+## About the Gallery
+Gallery now shows two real photos instead of the old color-swatch
+placeholders: a gold/black glitter ombre set and a deep red chrome set,
+both square-cropped, no feathering — same treatment as the hero. The grid
+dropped from 6 tiles to 2 on purpose, rather than filling the other 4 with
+stock or repeats: a Gallery showing "the work" needs to be real photos of
+Talon's actual clients, and a half-empty grid signals unfinished, while
+padding it with fakes would undercut the whole "real, not templated" pitch.
+Add more real photos as they come in — the grid is a simple 2-column
+`repeat(2, 1fr)` in `styles.css`, so a 3rd and 4th photo will slot in
+cleanly once you have them (it'll auto-wrap to a second row).
 
-That said, the general principle is still worth keeping in mind for
-anything added later: a Gallery section showing "the work" needs to be
-real photos of Talon's actual clients — stock there would be misleading,
-even though stock is fine elsewhere (service icons) when used as
-atmosphere rather than a specific claim.
+The general principle is still worth keeping in mind for anything else
+added later: stock is fine elsewhere (service icons, hero backdrop) when
+used as atmosphere, but the Gallery specifically is a claim about Talon's
+actual work, so it has to be true photos of it.
 
 One thing still worth knowing: the three **service icon** photos
 (`service-dip-powder.jpg` etc.) are still cropped from the *old* stock
@@ -66,10 +77,9 @@ shots once more real photos come in.
   there's time — see the note above.
 
 ## Before showing this to the owner
-1. **Gallery** (`#gallery` in index.html) — currently color swatches standing
-   in for real photos. Swap in actual nail-art photos once you have them —
-   drop image files in `assets/` and replace the `<div class="gallery-tile">`
-   elements with `<img>` tags.
+1. **Gallery** (`#gallery` in index.html) — has 2 real photos now; add more
+   as they come in by dropping new image files in `assets/` and adding
+   another `<img class="gallery-tile">` line alongside the existing two.
 2. **Testimonials** (`#testimonials`) — currently marked
    `[Client testimonial to be added]`. Replace with real quotes once you
    have any — never leave fabricated quotes in their place.

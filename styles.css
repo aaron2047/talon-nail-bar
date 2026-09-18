@@ -297,20 +297,17 @@ a:focus-visible, button:focus-visible {
 .gallery-note { font-size: 14px; color: var(--grey); margin-top: -8px; margin-bottom: 32px; }
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 12px;
+  max-width: 720px;
 }
 .gallery-tile {
-  min-height: 220px;
+  width: 100%;
   aspect-ratio: 1;
+  object-fit: cover;
   border-radius: 2px;
+  display: block;
 }
-.gallery-tile.s1 { background: var(--swatch-1); }
-.gallery-tile.s2 { background: var(--swatch-2); }
-.gallery-tile.s3 { background: var(--swatch-3); }
-.gallery-tile.s4 { background: var(--swatch-4); }
-.gallery-tile.s5 { background: var(--swatch-5); }
-.gallery-tile.s6 { background: var(--swatch-6); }
 
 /* ============================================================
    Testimonials
@@ -421,6 +418,5 @@ a:focus-visible, button:focus-visible {
   .nav-toggle { display: flex; }
   .wordmark img { height: 40px; }
   .hero { padding: 96px 0 64px; }
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .service-list li { gap: 16px; }
 }
