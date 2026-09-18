@@ -8,11 +8,13 @@ A custom-coded site (no template, no site builder) for Talon Nail Bar,
 - `styles.css` — all styling
 - `script.js` — mobile menu toggle (small, no dependencies)
 - `assets/logo.png` — the real logo, used in the header, footer, and favicon
-- `assets/hero-photo-real.png` — the hero's image: a real photo of actual
-  Talon client work (not stock), with the same soft elliptical fade baked
-  into the alpha channel (see note below) so it blends into the background
-  instead of showing a hard rectangular edge. Sits in the right column of
-  the two-column hero.
+- `assets/hero-photo-clean.jpg` — the hero's image, currently in use: a
+  real photo of actual Talon client work (smiley-face + solid gel set),
+  full frame, no feathering, with a plain 1px bronze border via CSS. Sits
+  in the right column of the two-column hero.
+- `assets/hero-photo-real.png` — the previous version of the same idea,
+  with a soft elliptical fade baked into the alpha channel. No longer
+  referenced in `index.html`, but kept here for reference/rollback.
 - `assets/hero-photo-crop.png` — the earlier stock (Unsplash-licensed)
   photo originally used in this spot. No longer used now that a real photo
   exists, but kept here in case it's ever useful as a placeholder again.
@@ -28,9 +30,19 @@ A custom-coded site (no template, no site builder) for Talon Nail Bar,
   (branch geometry) and `paint_rng` (nail color/accent choices).
 
 ## About the hero image
-The hero now uses a real photo of actual Talon client work, not stock —
-a meaningful upgrade, since it means the "atmosphere vs. claim" distinction
-that mattered for the earlier stock photo doesn't even apply here anymore.
+The hero uses a real photo of actual Talon client work, not stock — full
+frame, no feathering, just a clean 1px bronze border (`.hero-art-img` in
+`styles.css`). Earlier passes tried an elliptical alpha-fade to blend the
+photo into the dark background; that's been dropped in favor of showing
+the photo as-is, clearly and rectangularly — simpler, and it reads as more
+credible than an art-directed fade would.
+
+One framing note: the source photo is landscape (945×691) and both hands'
+outer fingers reach almost to the frame edges, so it isn't cropped to a
+tighter portrait shape — that would clip the pinky nails on one or both
+hands. It's used at full frame, which is why it sits a bit wide in the
+right column rather than filling it edge-to-edge.
+
 This same photo (or others like it) would also work well in the Gallery
 section, which has been sitting with placeholder color swatches this whole
 time waiting for exactly this kind of real material.
@@ -38,25 +50,13 @@ time waiting for exactly this kind of real material.
 That said, the general principle is still worth keeping in mind for
 anything added later: a Gallery section showing "the work" needs to be
 real photos of Talon's actual clients — stock there would be misleading,
-even though stock is fine elsewhere (hero backdrop, service icons) when
-used as atmosphere rather than a specific claim.
+even though stock is fine elsewhere (service icons) when used as
+atmosphere rather than a specific claim.
 
 One thing still worth knowing: the three **service icon** photos
 (`service-dip-powder.jpg` etc.) are still cropped from the *old* stock
 photo, not this new real one — worth revisiting those with real detail
 shots once more real photos come in.
-
-Technical notes:
-- The soft edge is baked directly into the image's alpha channel (an
-  elliptical fade, fully opaque through the center, feathering to fully
-  transparent at the edges) rather than done with a CSS mask or filter.
-  This was a deliberate choice for reliability — it renders correctly
-  everywhere images render, with no dependency on a specific browser
-  feature. If you ever swap in a different photo, you'll need to
-  regenerate this fade rather than just dropping in a plain crop.
-- Kept clear and vividly colored on purpose — an earlier full-bleed
-  version that faded the whole photo down lost impact; this version
-  keeps the photo itself at full clarity and only softens the edges.
 
 ## Files (services photos)
 - `assets/service-dip-powder.jpg`, `assets/service-gel-manicure.jpg`,

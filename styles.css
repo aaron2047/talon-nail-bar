@@ -184,17 +184,17 @@ a:focus-visible, button:focus-visible {
 }
 .hero-art-wrap {
   position: relative;
-  overflow: visible;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .hero-art-img {
-  width: 128%;
-  max-width: none;
-  position: relative;
-  left: -4%;
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  display: block;
+  border: 1px solid var(--bronze);
 }
 .hero-copy {
   max-width: 640px;
@@ -392,7 +392,7 @@ a:focus-visible, button:focus-visible {
    ============================================================ */
 @media (max-width: 860px) {
   .hero-grid, .about-grid, .footer-grid { grid-template-columns: 1fr; }
-  .hero-art-img { width: 100%; left: 0; max-width: 380px; margin: 0 auto; }
+  .hero-art-img { width: 100%; max-width: 380px; margin: 0 auto; }
   .testimonial-grid { grid-template-columns: 1fr; gap: 32px; }
   .pull-quote { border-left: none; border-top: 2px solid var(--bronze); padding-left: 0; padding-top: 20px; }
 }
