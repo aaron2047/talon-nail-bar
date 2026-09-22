@@ -83,9 +83,11 @@ shots once more real photos come in.
 2. **Testimonials** (`#testimonials`) — currently marked
    `[Client testimonial to be added]`. Replace with real quotes once you
    have any — never leave fabricated quotes in their place.
-3. **Booking button** — appears three times, each tagged with class
-   `js-book-link` in the HTML so you can find them fast. Point these at
-   the real GoHighLevel calendar link once it exists.
+3. **Booking button** — done for the demo. The nav and hero buttons scroll
+   to `#book`; the "Check Availability" button there links out to a real,
+   working GHL (LeadConnector) booking calendar. See "About the booking
+   system" below for how this replaced the earlier Square plan, and what
+   changes once Talon signs on.
 4. **Footer hours** — currently says "By appointment — message or call to
    confirm times," since we don't have their confirmed weekly hours.
    Update once you know them.
@@ -93,6 +95,43 @@ shots once more real photos come in.
    Philly 2025 win. If it turns out to be new ownership, rewrite this
    paragraph live with the owner, the same way we planned for the
    GHL-template version.
+
+## About the booking system
+Originally set up as a free Square Appointments page, but that plan hit a
+wall: Talon already has their own Square account (with booking never
+turned on), so putting a second, disconnected Square identity under the
+Woolph account would've meant two separate Square presences for one
+business — worse than not having booking at all. Since Woolph already
+runs the GHL side of this relationship, the calendar moved there instead,
+consolidating everything under one roof rather than depending on Square.
+
+Current setup: a **Round Robin** calendar in GHL (LeadConnector), built
+inside Talon's sub-account under the Woolph agency account. Round Robin
+was picked over "Personal booking" specifically because it scales — a
+single placeholder team member today behaves like a shared calendar, and
+adding a second stylist later is just adding them to the same rotation,
+no rebuild needed. Email confirmations are on for both "Appointment
+booked" statuses (Notifications & policies tab on the calendar) — check
+there first if a real booking ever doesn't trigger a confirmation email.
+
+The `js-book-link` "Check Availability" button points directly at the
+calendar's booking widget URL:
+`https://api.leadconnectorhq.com/widget/booking/xzSmQite6T2h0Vf8EKKH`
+
+Once Talon actually signs on:
+- Replace the placeholder team member with their real stylist(s).
+- Decide whether new bookings should auto-confirm (frictionless, like
+  Fresha/Square) or require manual approval first — that's the
+  **Booking rules** tab on the calendar, not yet decided either way.
+- Confirm the "we will contact you shortly" phone number in the
+  confirmation screen is Talon's real number, not Woolph's placeholder.
+
+A separate, bigger idea is on the table: a fully custom booking system
+(real backend, no third-party platform at all) as a proprietary
+differentiator — "book direct, no fees to anyone else." Genuinely buildable
+(Supabase/Cloudflare free tier + email/SMS via Resend/Twilio), and a strong
+portfolio piece for Plan B, but it's a multi-day build, not a same-day one
+like this. Deliberately sequenced for *after* Talon signs, not before.
 
 ## Deploying (GitHub Pages)
 This is already live at the repo's GitHub Pages URL. To push an update:
